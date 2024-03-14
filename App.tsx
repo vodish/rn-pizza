@@ -1,44 +1,87 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 import Copy from './scr/components/svg/Copy';
 import Shoping from './scr/components/svg/shoping';
 // import Copy from './assets/Copy.svg'
 
+
+
+
 export default function App() {
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open 12</Text>
+    <ScrollView style={styles.container}>
+      <View>
+        <Text>Open 12</Text>
+      </View>
 
-
-      <View style={styles.div}>
+      <View style={styles.divimg}>
         <Image
-          source={{ uri: 'https://reactjs.org/logo-og.png' }}
-          style={{ width: '100%', height: 100 }}
+          source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=OUKUU4OApl&w=200' }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=tMxIoPTaMZ&w=200' }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=OUKUU4OApl&w=200' }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=tMxIoPTaMZ&w=200' }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=OUKUU4OApl&w=200' }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=tMxIoPTaMZ&w=200' }}
+          style={styles.img}
         />
       </View>
+
 
       <View style={styles.div}>
         <Image source={require('./assets/favicon.png')}></Image>
       </View>
-      
+
       <View style={styles.div}>
         <Shoping fill={'#777'} />
       </View>
-      
-      <View style={styles.div}>
-        <Copy width="100" height="100" stroke={`#777`} />
-      </View>
-      <StatusBar style="auto" />
-    </View>
+
+      <Text>width: {width}</Text>
+
+      {/* <StatusBar style="auto" /> */}
+    </ScrollView>
   );
 }
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#eee',
+  },
+  divimg: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    gap: 15,
+    // borderWidth: 1,
+    borderColor: '#ccc',
+    // width: '100%',
+    paddingHorizontal: 10,
+    marginVertical: 10,
+  },
+  img: {
+    width: width / 2.2,
+    height: width / 2.2,
+    // borderWidth: 1,
+    borderColor: 'red',
   },
   div: {
     borderWidth: 1,
