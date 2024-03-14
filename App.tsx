@@ -25,7 +25,7 @@ export default function App() {
           source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=tMxIoPTaMZ&w=200' }}
           style={styles.img}
         />
-        <Image
+        {/* <Image
           source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=OUKUU4OApl&w=200' }}
           style={styles.img}
         />
@@ -40,7 +40,7 @@ export default function App() {
         <Image
           source={{ uri: 'https://api.supergood.ru/getFileNew.php?uid=tMxIoPTaMZ&w=200' }}
           style={styles.img}
-        />
+        /> */}
       </View>
 
 
