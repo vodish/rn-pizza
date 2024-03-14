@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bf671225-fc06-42dd-926d-08fdfd6a29b8"
+      }
+    },
+    "owner": "vodish"
   }
 }
