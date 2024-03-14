@@ -54,7 +54,7 @@ export default function App() {
 
       <Text>width: {width}</Text>
 
-      {/* <StatusBar style="auto" /> */}
+      <StatusBar style="auto" backgroundColor='#eee' />
     </ScrollView>
   );
 }
