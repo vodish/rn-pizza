@@ -1,30 +1,28 @@
-import { SafeAreaView, View, StyleSheet, Image, Text, Linking, TouchableOpacity } from 'react-native';
-import { DrawerContentScrollView, DrawerItemList, DrawerItem, DrawerContentComponentProps } from '@react-navigation/drawer';
+import { SafeAreaView, View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
+import { DrawerContentScrollView, DrawerContentComponentProps } from '@react-navigation/drawer';
 import { CommonActions, DrawerActions } from '@react-navigation/native';
+import SvgPwsLogoColor from '../../components/svg/svg_psw_logo_color';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
+export default function DrawerContent({ state, descriptors, navigation }: DrawerContentComponentProps) {
 
-export default function DrawerContent(props: DrawerContentComponentProps) {
+  const insets = useSafeAreaInsets();
 
-  const { state, descriptors, navigation } = props
-  // console.log(JSON.stringify(state, null, 4))
-  // console.log(JSON.stringify(descriptors, null, 4))
-
-  const BASE_PATH = 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
-
-
+  // console.log(JSON.stringify(insets, null, 4))
 
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, marginTop: insets.top + 4 }}>
 
-      {/* <Image source={{ uri: 'https://static.pizzasushiwok.ru/images/menu_new/661-1300.jpg' }} style={styles.topIcon} /> */}
+      <View style={styles.top}>
+        <SvgPwsLogoColor width={50} height={50} />
+      </View>
 
-      <DrawerContentScrollView {...props} style={{ borderWidth: 1, borderColor: 'blue', }}>
-
+      <DrawerContentScrollView contentContainerStyle={styles.sclollView}>
         {state.routes.map((route, i) => {
 
-          const isFocused = i === state.index;
+          const isFocused = i == state.index;
 
           const onPress = () => {
             const event = navigation.emit({
@@ -43,34 +41,37 @@ export default function DrawerContent(props: DrawerContentComponentProps) {
 
           return (
             <TouchableOpacity onPress={onPress} key={i}>
-              <View style={styles.row}>
-                <Text>{route.name}</Text>
-                <Text>12</Text>
+              <View style={{ ...styles.row, ...isFocused && styles.active }}>
+                <Text style={{ ...styles.name, ...isFocused && styles.active }}>{route.name}</Text>
+                <Text style={{ ...styles.cnt, ...isFocused && styles.active }}>12</Text>
               </View>
             </TouchableOpacity>
           )
 
         })}
-
-        {/* <DrawerItemList {...props}><Text>sdvsdv</Text> </DrawerItemList> */}
-
-        {/* <DrawerItem label="Visit Us" onPress={() => Linking.openURL('https://aboutreact.com/')} /> */}
-
-        {/* <View style={styles.customItem}>
-          <Text onPress={() => { Linking.openURL('https://aboutreact.com/') }}>Rate Us</Text>
-          <Image source={{ uri: BASE_PATH + 'star_filled.png' }} style={styles.iconStyle} />
-        </View> */}
-
       </DrawerContentScrollView>
-
-      {/* <Text style={{ fontSize: 16, textAlign: 'center', color: 'grey' }}>www.aboutreact.com</Text> */}
 
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  row: { display: 'flex', flexDirection: 'row', justifyContent: 'space-between', borderWidth: 1, borderColor: 'red', },
+  top: { display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: 5, borderWidth: 0, borderColor: 'red', },
+
+  sclollView: { borderWidth: 0, borderColor: 'blue', paddingTop: 4 },
+
+  row: {
+    display: 'flex', flexDirection: 'row', justifyContent: 'space-between',
+    marginHorizontal: 10,
+    paddingVertical: 12, paddingHorizontal: 10,
+    borderTopWidth: 1, borderColor: '#ccc',
+  },
+  // rowActive: { backgroundColor: 'yellow', },
+  rowActive: {},
+  active: { backgroundColor: '#ccc', },
+  name: {},
+  cnt: {},
+
 
 
   customItem: {
@@ -83,7 +84,6 @@ const styles = StyleSheet.create({
     height: 15,
     // marginHorizontal: 5,
   },
-
 
   topIcon: {
     resizeMode: 'center',

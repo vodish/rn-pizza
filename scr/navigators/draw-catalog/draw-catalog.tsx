@@ -11,9 +11,9 @@ export default function DrawCatalog() {
 
   return (
     <Navigator drawerContent={props => <DrawerContent {...props} /> }>
-      {[...Array(2).keys()].map(key => {
+      {[...Array(32).keys()].map(key => {
         return (
-          <Screen key={key} name={`ScreenCatalogCategory${key+1}`} component={ScreenCatalogCategory} />
+          <Screen key={key} name={`ScreenCatalogCategory_${key+1}`} component={ScreenCatalogCategory} />
         )
       })}
     </Navigator>
