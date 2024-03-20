@@ -66,9 +66,9 @@ const styles = StyleSheet.create({
     paddingVertical: 12, paddingHorizontal: 15,
     borderBottomWidth: 1, borderColor: '#ccc',
   },
-  
+
   active: { backgroundColor: '#ccc', },
   name: {},
   cnt: {},
-  
+
 });
