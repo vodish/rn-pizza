@@ -1,4 +1,4 @@
-import { SafeAreaView, View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { DrawerContentScrollView, DrawerContentComponentProps } from '@react-navigation/drawer';
 import { CommonActions, DrawerActions } from '@react-navigation/native';
 import SvgPwsLogoColor from '../../components/svg/svg_psw_logo_color';
@@ -62,9 +62,9 @@ const styles = StyleSheet.create({
 
   row: {
     display: 'flex', flexDirection: 'row', justifyContent: 'space-between',
-    marginHorizontal: 10,
-    paddingVertical: 12, paddingHorizontal: 10,
-    borderTopWidth: 1, borderColor: '#ccc',
+    // marginHorizontal: 10,
+    paddingVertical: 12, paddingHorizontal: 15,
+    borderBottomWidth: 1, borderColor: '#ccc',
   },
   
   active: { backgroundColor: '#ccc', },
