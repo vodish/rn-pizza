@@ -5,11 +5,11 @@ import SvgPwsLogoColor from '../../components/svg/svg_psw_logo_color';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
-export default function DrawerContent({ state, descriptors, navigation }: DrawerContentComponentProps) {
+export default function DrawerContent({ state, navigation }: DrawerContentComponentProps) {
 
   const insets = useSafeAreaInsets();
 
-  // console.log(JSON.stringify(insets, null, 4))
+  // console.log(JSON.stringify(state, null, 4))
 
 
   return (

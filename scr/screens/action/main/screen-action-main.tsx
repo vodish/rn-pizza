@@ -6,7 +6,7 @@ import { Text, View, ScrollView, Button, TouchableOpacity } from "react-native";
 export default function ScreenActionMain({ navigation }) {
 
   return (
-    <ScrollView style={{ borderWidth: 1, borderColor: 'red' }}>
+    <ScrollView style={{ borderWidth: 0, borderColor: 'red' }}>
 
       <Text>Action</Text>
 

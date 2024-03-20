@@ -11,7 +11,7 @@ export default function ScreenCatalogCategory({navigation}) {
 
         <TouchableOpacity
           key={key}
-          style={{ height: 50, borderWidth: 1, borderColor: 'red', marginBottom: 10, }}
+          style={{ height: 50, borderWidth: 0, borderColor: 'red', marginBottom: 10, }}
           // onPress={() => { navigation.push('') alert('You tapped the button!') }}
           >
           
