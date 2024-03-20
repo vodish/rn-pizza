@@ -4,13 +4,12 @@ import SvgLocationOn from '../../components/svg/svg_location_on';
 import SvgLunchDining from '../../components/svg/svg_lunch_dining';
 import SvgShoppingBasket from '../../components/svg/svg_shopping_basket';
 import SvgClockLoader from '../../components/svg/svg_clock_loader';
-import SvgFace from '../../components/svg/svg_face';
 import SvgHelp from '../../components/svg/svg_help';
 
 
 // настройка табов
 
-export default function TbaBarMain({ state, descriptors, navigation }: BottomTabBarProps) {
+export default function TabBarMain({ state, descriptors, navigation }: BottomTabBarProps) {
 
   // console.log(JSON.stringify(state, null, 4))
   // console.log(JSON.stringify(descriptors, null, 4))
