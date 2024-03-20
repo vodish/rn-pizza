@@ -66,34 +66,9 @@ const styles = StyleSheet.create({
     paddingVertical: 12, paddingHorizontal: 10,
     borderTopWidth: 1, borderColor: '#ccc',
   },
-  // rowActive: { backgroundColor: 'yellow', },
-  rowActive: {},
+  
   active: { backgroundColor: '#ccc', },
   name: {},
   cnt: {},
-
-
-
-  customItem: {
-    padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  iconStyle: {
-    width: 15,
-    height: 15,
-    // marginHorizontal: 5,
-  },
-
-  topIcon: {
-    resizeMode: 'center',
-    width: 100,
-    height: 100,
-    // borderRadius: 100 / 2,
-    alignSelf: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
-    // marginTop: -20,
-  },
-
+  
 });
