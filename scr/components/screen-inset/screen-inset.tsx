@@ -35,7 +35,8 @@ const style = StyleSheet.create({
     borderBottomWidth: 1, borderColor: '#eee',
     display: 'flex', flexDirection: 'row', alignItems: 'center',
     paddingVertical: 8,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
+    marginBottom: 5,
   },
 
   back: {
@@ -51,8 +52,8 @@ const style = StyleSheet.create({
   
   body: {
     // borderWidth: 1, borderColor: 'green',
-    paddingHorizontal: 15,
     
+    // marginBottom: 10,
   },
 
 

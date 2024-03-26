@@ -1,6 +1,7 @@
 export type TAddress = {
-  type: 'filal' | 'point',
-  filial: string,
-  name: string,
+  type: 'filial' | 'address',
+  filialId: number,
+  addressId: number,
+  addressName: string,
   selected: boolean,
 }
