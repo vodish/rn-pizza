@@ -6,6 +6,7 @@ import StackAction from '../stack-action/stack-action';
 import StackBasket from '../stack-basket/stack-basket';
 import StackProfile from '../stack-profile/stack-profile';
 import TabBarMain from './tab-main-bar';
+import StackAddress from '../stack-address/stack-address';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -14,8 +15,8 @@ const { Navigator, Screen } = createBottomTabNavigator();
 export default function TabMain() {
 
   return (
-    <Navigator screenOptions={option} initialRouteName="StackAction" tabBar={props => <TabBarMain {...props} />}>
-      <Screen name="StackAddress" component={StackBasket} options={{title: 'Адрес'}} />
+    <Navigator screenOptions={option} initialRouteName="StackAddress" tabBar={props => <TabBarMain {...props} />}>
+      <Screen name="StackAddress" component={StackAddress} options={{title: 'Адрес'}} />
       <Screen name="DrawCatalog" component={DrawCatalog} options={{title: 'Каталог'}} />
       <Screen name="StackBasket" component={StackBasket} options={{title: 'Корзина'}} />
       <Screen name="StackAction" component={StackAction} options={{title: 'Акции'}} />

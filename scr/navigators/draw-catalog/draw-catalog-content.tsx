@@ -3,6 +3,7 @@ import { DrawerContentScrollView, DrawerContentComponentProps } from '@react-nav
 import { CommonActions, DrawerActions } from '@react-navigation/native';
 import SvgPwsLogoColor from '../../components/svg/svg_psw_logo_color';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import SvgKLogo from '../../components/svg/svg_k_logo';
 
 
 export default function DrawerContent({ state, navigation }: DrawerContentComponentProps) {
@@ -16,6 +17,7 @@ export default function DrawerContent({ state, navigation }: DrawerContentCompon
     <SafeAreaView style={{ flex: 1, marginTop: insets.top + 4 }}>
 
       <View style={styles.top}>
+        {/* <SvgKLogo width={50} height={50} fill="#af2226" /> */}
         <SvgPwsLogoColor width={50} height={50} />
       </View>
 
