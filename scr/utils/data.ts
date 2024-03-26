@@ -18,6 +18,13 @@ export const dataAddress: TAddress[] = [
     selected: false,
   },
   {
+    type: 'address',
+    filialId: 1,
+    addressId: 102,
+    addressName: '5-я улица Ямского Поля, 7к1',
+    selected: false,
+  },
+  {
     type: 'filial',
     filialId: 1,
     addressId: 101,

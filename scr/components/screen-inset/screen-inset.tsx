@@ -1,16 +1,30 @@
-import { StyleSheet, ScrollView, View, Text } from "react-native";
+import { StyleSheet, ScrollView, View, Text, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SvgArrowBackIosNew from "../svg/svg_arrow_back_ios_new";
 
 
-export default function ScreenInset({ title, children }) {
+type TScreenInset = {
+  title: string,
+  handleBack?(): void,
+  children: React.JSX.Element
+}
+
+
+export default function ScreenInset({ title, handleBack, children }: TScreenInset) {
 
   const insets = useSafeAreaInsets()
+
 
   return (
     <View style={[style.screen, { paddingTop: insets.top, }]}>
       <View style={style.header}>
-        {/* <View style={style.back}><SvgArrowBackIosNew height={20} /></View> */}
+
+        {handleBack &&
+          <TouchableOpacity style={style.back} onPress={handleBack}>
+            <SvgArrowBackIosNew width={20} height={20} />
+          </TouchableOpacity>
+        }
+
         <Text style={style.title}>{title}</Text>
       </View>
       <ScrollView style={[style.body]}>
@@ -29,19 +43,20 @@ const style = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
   },
-  
+
   header: {
     // borderWidth: 1, borderColor: 'red',
     borderBottomWidth: 1, borderColor: '#eee',
     display: 'flex', flexDirection: 'row', alignItems: 'center',
-    paddingVertical: 8,
+    height: 44,
+    // paddingVertical: 8,
     paddingHorizontal: 20,
     marginBottom: 5,
   },
 
   back: {
     // borderWidth: 1, borderColor: 'red',
-    marginRight: 10,
+    padding: 10, marginLeft: -15, marginRight: 10,
   },
 
   title: {
@@ -49,11 +64,10 @@ const style = StyleSheet.create({
     fontWeight: '700',
   },
 
-  
+
   body: {
     // borderWidth: 1, borderColor: 'green',
-    
-    // marginBottom: 10,
+
   },
 
 
