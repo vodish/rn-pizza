@@ -59,9 +59,7 @@ const style = StyleSheet.create({
     borderBottomWidth: 1, borderColor: '#eee',
     display: 'flex', flexDirection: 'row', alignItems: 'center',
     height: 44,
-    // paddingVertical: 8,
     paddingHorizontal: 20,
-    marginBottom: 5,
   },
 
   title: {
@@ -76,11 +74,12 @@ const style = StyleSheet.create({
 
   right: {
     // borderWidth: 1, borderColor: 'red',
-    marginLeft: 'auto',  //marginRight: 10,
+    marginLeft: 'auto',
   },
 
 
   body: {
+    paddingTop: 5,
     // borderWidth: 1, borderColor: 'green',
 
   },
