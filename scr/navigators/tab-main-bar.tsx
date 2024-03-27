@@ -5,6 +5,7 @@ import SvgLunchDining from '../components/svg/svg_lunch_dining';
 import SvgShoppingBasket from '../components/svg/svg_shopping_basket';
 import SvgClockLoader from '../components/svg/svg_clock_loader';
 import SvgHelp from '../components/svg/svg_help';
+import { COLOR_TAB_ICON_ACTIVE } from '../utils/const';
 
 
 
@@ -57,11 +58,11 @@ export default function TabBarMain({ state, descriptors, navigation }: BottomTab
               style={style.cell}
             >
 
-              {route.name == 'StackAddress' && <SvgLocationOn fill={isFocused ? 'red' : ''} />}
-              {route.name == 'DrawCatalog' && <SvgLunchDining fill={isFocused ? 'red' : ''} />}
-              {route.name == 'StackBasket' && <SvgShoppingBasket fill={isFocused ? 'red' : ''} />}
-              {route.name == 'StackAction' && <SvgClockLoader fill={isFocused ? 'red' : ''} />}
-              {route.name == 'StackProfile' && <SvgHelp fill={isFocused ? 'red' : ''} />}
+              {route.name == 'StackAddress' && <SvgLocationOn fill={isFocused ? COLOR_TAB_ICON_ACTIVE : ''} />}
+              {route.name == 'DrawCatalog' && <SvgLunchDining fill={isFocused ? COLOR_TAB_ICON_ACTIVE : ''} />}
+              {route.name == 'StackBasket' && <SvgShoppingBasket fill={isFocused ? COLOR_TAB_ICON_ACTIVE : ''} />}
+              {route.name == 'StackAction' && <SvgClockLoader fill={isFocused ? COLOR_TAB_ICON_ACTIVE : ''} />}
+              {route.name == 'StackProfile' && <SvgHelp fill={isFocused ? COLOR_TAB_ICON_ACTIVE : ''} />}
 
               <Text style={style.title}>{options.title}</Text>
 

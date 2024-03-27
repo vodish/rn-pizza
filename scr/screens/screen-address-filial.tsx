@@ -1,7 +1,9 @@
-import { Alert, Modal, Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, Modal, Pressable, Linking, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import ScreenInset from "../components/screen-inset";
 import { Screen1, TAddress } from "../utils/types";
 import { useState } from "react";
+import { Link } from "@react-navigation/native";
+import { COLOR_LINK1 } from "../utils/const";
 
 
 type ScreenAddressFilial = Screen1 & {
@@ -25,24 +27,26 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
     >
       <View style={style.list}>
 
-        <View style={style.row}>
+        <View style={[style.row, {paddingBottom: 0}]}>
           <Text>Зона доставки</Text>
           <View style={style.map} />
         </View>
 
-        <View style={[style.row, style.line]}>
-          <Text>Адрес филиала</Text>
-          <Text>Какая-то улица, 21</Text>
+        <Text style={[style.row, style.head]}>Адрес филиала</Text>
+
+        <View style={[style.row, style.line, style.two]}>
+          <Text>5-я улица Ямского Поля, 7к2</Text>
+          <Text onPress={() => { Linking.openURL('https://yandex.ru/maps/?text=5-я улица Ямского Поля, 7к2') }}>Map</Text>
         </View>
 
         <View style={[style.row, style.line, style.two]}>
           <Text>Режим работы</Text>
-          <Text>с 9:00 -- 21:00</Text>
+          <Text>9:00 &mdash; 21:00</Text>
         </View>
 
         <View style={[style.row, style.line, style.two]}>
           <Text>Бесплатная доставка</Text>
-          <Text>с 08:00 -- 05:00</Text>
+          <Text>8:00 &mdash; 05:00</Text>
         </View>
 
 
@@ -50,12 +54,12 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
 
 
         <TouchableOpacity style={[style.row, style.line]} onPress={() => navigation.navigate('ScreenAddressPoint')}>
-          <Text>Добавить адрес доставки</Text>
+          <Text style={style.link}>Добавить адрес доставки</Text>
         </TouchableOpacity>
 
 
 
-{/*         
+        {/*         
         <TouchableOpacity style={[style.row, style.line]} onPress={() => setModalVisible(true)}>
           <Text>Добавить адрес доставки</Text>
         </TouchableOpacity>
@@ -90,21 +94,23 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
 
 const style = StyleSheet.create({
   list: {
-    // borderWidth: 1, borderColor: 'red',
     marginHorizontal: 20,
   },
 
   row: {
+    // borderWidth: 1, borderColor: 'red',
     // borderBottomWidth: 1, borderBottomColor: '#eee',
-    marginTop: 10, marginBottom: 10,
+    paddingVertical: 10,
   },
 
   head: {
-    fontWeight: 'bold'
+    marginTop: 20,
+    fontWeight: 'bold',
   },
 
   line: {
-    borderBottomWidth: 1, borderColor: '#eee', paddingBottom: 8,
+    borderBottomWidth: 1, borderColor: '#eee',
+    paddingBottom: 8,
   },
 
   two: {
@@ -112,9 +118,13 @@ const style = StyleSheet.create({
   },
 
   map: {
-    width: 'auto', height: 110, marginTop: 5,
+    width: 'auto', height: 100, marginTop: 5,
     borderColor: '#ccc', borderWidth: 1, backgroundColor: '#eee',
 
+  },
+
+  link: {
+    color: COLOR_LINK1
   },
 
   modal: {
@@ -123,6 +133,6 @@ const style = StyleSheet.create({
     borderTopLeftRadius: 20, borderTopRightRadius: 20,
     alignItems: 'center', justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,0.9)',
     color: 'lime',
-  }
+  },
 
 })
