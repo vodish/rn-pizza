@@ -2,7 +2,6 @@ import { StyleSheet, ScrollView, View, Text, TouchableOpacity } from "react-nati
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SvgArrowBackIosNew from "./svg/svg_arrow_back_ios_new";
 import SvgDelete from "./svg/svg_delete";
-import { COLOR_LINK1 } from "../utils/const";
 
 
 type TScreenInset = {
@@ -30,6 +29,7 @@ export default function ScreenInset({ title, handleBack, handleTrash, children }
 
         <Text style={style.title}>{title}</Text>
 
+        
         {handleTrash &&
           <TouchableOpacity style={style.right} onPress={handleTrash}>
             <SvgDelete width={24} height={24} />

@@ -25,6 +25,15 @@ export default function ScreenAddressPoint({ navigation, route }: TScreenAddress
     alert('Удалить адрес?')
   }
 
+
+  function handleAddressPress(newValue: string) {
+
+    console.log(newValue)
+  }
+
+
+
+
   return (
     <ScreenInset title={title} handleBack={navigation.goBack} handleTrash={address ? handlerTrash: null}>
       <View style={style.list}>
@@ -33,7 +42,7 @@ export default function ScreenAddressPoint({ navigation, route }: TScreenAddress
 
         <View style={[style.row]}>
           <Text style={style.label}>Адрес</Text>
-          <TextInput style={style.input}>{address}</TextInput>
+          <TextInput style={style.input} onChangeText={handleAddressPress}>{address}</TextInput>
         </View>
 
         <View style={[style.row]}>
