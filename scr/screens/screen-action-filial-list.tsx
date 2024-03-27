@@ -1,9 +1,9 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { style } from './screen-action-filial-list.style'
-import ScreenInset from "../../../../components/screen-inset/screen-inset";
-import { dataAddress } from "../../../../utils/data";
-import SvgRadioButtonChecked from "../../../../components/svg/svg_radio_button_checked";
-import { TAddress } from "../../../../utils/types";
+import ScreenInset from "../components/screen-inset";
+import { dataAddress } from "../utils/data";
+import SvgRadioButtonChecked from "../components/svg/svg_radio_button_checked";
+import { TAddress } from "../utils/types";
 
 
 export default function ScreenAddressFilialList({ navigation }) {

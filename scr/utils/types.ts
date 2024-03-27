@@ -1,5 +1,6 @@
 export type Screen1 = {
   navigation: {
+    navigate(any): void,
     dispatch(): void,
     goBack(): void,
     reset(): void,

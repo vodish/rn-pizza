@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import ScreenInset from "../../../components/screen-inset/screen-inset";
+import ScreenInset from "../components/screen-inset";
 
 
 export default function ScreenAddressPoint({ navigation }) {

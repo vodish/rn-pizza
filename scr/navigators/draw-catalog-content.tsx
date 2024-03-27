@@ -1,9 +1,8 @@
 import { SafeAreaView, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { DrawerContentScrollView, DrawerContentComponentProps } from '@react-navigation/drawer';
 import { CommonActions, DrawerActions } from '@react-navigation/native';
-import SvgPwsLogoColor from '../../components/svg/svg_psw_logo_color';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import SvgKLogo from '../../components/svg/svg_k_logo';
+import SvgPwsLogoColor from '../components/svg/svg_psw_logo_color';
 
 
 export default function DrawerContent({ state, navigation }: DrawerContentComponentProps) {

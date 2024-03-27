@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ScreenActionMain from "../../screens/action/main/screen-action-main";
-import ScreenActionItem from "../../screens/action/item/screen-action-item";
-import ModalAction from "../../modals/action/modal-action";
+import ScreenActionMain from "../screens/screen-action-main";
+import ScreenActionItem from "../screens/screen-action-item";
+
 
 
 const { Navigator, Screen } = createNativeStackNavigator();
@@ -13,7 +13,6 @@ export default function StackAction() {
     <Navigator>
       <Screen name="ScreenActionMain" component={ScreenActionMain}></Screen>
       <Screen name="ScreenActionItem" component={ScreenActionItem}></Screen>
-      <Screen name="ModalAction" component={ModalAction} options={{ presentation: 'modal', headerShown: false }} ></Screen>
     </Navigator>
   )
 }

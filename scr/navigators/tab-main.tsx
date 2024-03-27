@@ -1,19 +1,27 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { option } from './tab-main.style';
-import DrawCatalog from '../draw-catalog/draw-catalog';
-import StackAction from '../stack-action/stack-action';
-import StackBasket from '../stack-basket/stack-basket';
-import StackProfile from '../stack-profile/stack-profile';
+import { createBottomTabNavigator, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import TabBarMain from './tab-main-bar';
-import StackAddress from '../stack-address/stack-address';
+import StackAddress from './stack-address';
+import DrawCatalog from './draw-catalog';
+import StackBasket from './stack-basket';
+import StackAction from './stack-action';
+import StackProfile from './stack-profile';
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 
-export default function TabMain() {
+function option(): BottomTabNavigationOptions {
+  return ({
+    tabBarActiveTintColor: 'tomato',
+    tabBarInactiveTintColor: 'gray',
+    tabBarShowLabel: false,
+    headerShown: false,
+  })
+}
 
+
+
+export default function TabMain() {
   return (
     <Navigator screenOptions={option} initialRouteName="StackAddress" tabBar={props => <TabBarMain {...props} />}>
       <Screen name="StackAddress" component={StackAddress} options={{title: 'Адрес'}} />

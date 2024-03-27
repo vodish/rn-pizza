@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, View, Image, Dimensions } from 'react-native';
-import Shoping from '../../components/svg/shoping';
+import Shoping from '../components/svg/shoping';
 
 
 

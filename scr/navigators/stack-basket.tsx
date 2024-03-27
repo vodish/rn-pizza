@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ScreenBasketOrder from "../../screens/basket/order/screen-basket-order";
-import ScreenBasketDelivery from "../../screens/basket/delivery/screen-basket-delivery";
-import ScreenBasketCheck from "../../screens/basket/check/screen-basket-check";
+import ScreenBasketOrder from "../screens/screen-basket-order";
+import ScreenBasketDelivery from "../screens/screen-basket-delivery";
+import ScreenBasketCheck from "../screens/screen-basket-check";
 
 
 

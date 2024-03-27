@@ -1,6 +1,6 @@
 import { StyleSheet, ScrollView, View, Text, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import SvgArrowBackIosNew from "../svg/svg_arrow_back_ios_new";
+import SvgArrowBackIosNew from "./svg/svg_arrow_back_ios_new";
 
 
 type TScreenInset = {

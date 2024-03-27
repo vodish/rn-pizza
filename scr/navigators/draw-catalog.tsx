@@ -1,6 +1,5 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import ScreenCatalogCategory from '../../screens/catalog/category/screen-catalog-category';
-
+import ScreenCatalogCategory from '../screens/screen-catalog-category';
 import DrawerContent from './draw-catalog-content';
 
 
