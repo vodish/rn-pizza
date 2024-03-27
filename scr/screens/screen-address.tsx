@@ -23,7 +23,7 @@ export default function ScreenAddress({ navigation }) {
   return (
     <ScreenInset title="Филиалы">
       <View style={style.list}>
-
+        
         {dataAddress.map((el, key) => {
           return (
             <View key={key} style={[style.row, { borderTopWidth: key ? 1 : 0 }]}>

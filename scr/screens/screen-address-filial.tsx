@@ -49,11 +49,16 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
         <Text style={[style.row, style.head]}>Мои адреса</Text>
 
 
-        <TouchableOpacity style={[style.row, style.line]} onPress={() => setModalVisible(true)}>
+        <TouchableOpacity style={[style.row, style.line]} onPress={() => navigation.navigate('ScreenAddressPoint')}>
           <Text>Добавить адрес доставки</Text>
         </TouchableOpacity>
 
 
+
+{/*         
+        <TouchableOpacity style={[style.row, style.line]} onPress={() => setModalVisible(true)}>
+          <Text>Добавить адрес доставки</Text>
+        </TouchableOpacity>
 
         <Modal
           animationType="slide"
@@ -65,15 +70,13 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
           }}>
 
           <View style={style.modal}>
-            <View>
-              <Text style={{ color: 'lime' }}>Hello World!</Text>
-              <Pressable onPress={() => setModalVisible(!modalVisible)}>
-                <Text >Hide Modal</Text>
-              </Pressable>
-            </View>
+            <Text style={{ color: 'lime' }}>Hello World!</Text>
+            <Pressable onPress={() => setModalVisible(!modalVisible)}>
+              <Text >Hide Modal</Text>
+            </Pressable>
           </View>
 
-        </Modal>
+        </Modal> */}
 
 
 
