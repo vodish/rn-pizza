@@ -2,8 +2,8 @@ import { Alert, Modal, Pressable, Linking, StyleSheet, Text, TouchableOpacity, V
 import ScreenInset from "../components/screen-inset";
 import { Screen1, TAddress } from "../utils/types";
 import { useState } from "react";
-import { Link } from "@react-navigation/native";
 import { COLOR_LINK1 } from "../utils/const";
+import SvgMap from "../components/svg/svg_map";
 
 
 type ScreenAddressFilial = Screen1 & {
@@ -27,7 +27,7 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
     >
       <View style={style.list}>
 
-        <View style={[style.row, {paddingBottom: 0}]}>
+        <View style={[style.row, { paddingBottom: 0 }]}>
           <Text>Зона доставки</Text>
           <View style={style.map} />
         </View>
@@ -36,7 +36,9 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
 
         <View style={[style.row, style.line, style.two]}>
           <Text>5-я улица Ямского Поля, 7к2</Text>
-          <Text onPress={() => { Linking.openURL('https://yandex.ru/maps/?text=5-я улица Ямского Поля, 7к2') }}>Map</Text>
+          <Pressable onPress={() => { Linking.openURL('https://yandex.ru/maps/?text=5-я улица Ямского Поля, 7к2') }}>
+            <SvgMap width={22} height={22} fill={COLOR_LINK1} />
+          </Pressable>
         </View>
 
         <View style={[style.row, style.line, style.two]}>
@@ -53,7 +55,7 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
         <Text style={[style.row, style.head]}>Мои адреса</Text>
 
 
-        <TouchableOpacity style={[style.row, style.line]} onPress={() => navigation.navigate('ScreenAddressPoint')}>
+        <TouchableOpacity style={[style.row, style.line]} onPress={() => navigation.navigate({name: 'ScreenAddressPoint', params: 'new'})}>
           <Text style={style.link}>Добавить адрес доставки</Text>
         </TouchableOpacity>
 

@@ -1,16 +1,19 @@
 import { StyleSheet, ScrollView, View, Text, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SvgArrowBackIosNew from "./svg/svg_arrow_back_ios_new";
+import SvgDelete from "./svg/svg_delete";
+import { COLOR_LINK1 } from "../utils/const";
 
 
 type TScreenInset = {
   title: string,
   handleBack?(): void,
+  handleTrash?(): void,
   children: React.JSX.Element
 }
 
 
-export default function ScreenInset({ title, handleBack, children }: TScreenInset) {
+export default function ScreenInset({ title, handleBack, handleTrash, children }: TScreenInset) {
 
   const insets = useSafeAreaInsets()
 
@@ -26,6 +29,13 @@ export default function ScreenInset({ title, handleBack, children }: TScreenInse
         }
 
         <Text style={style.title}>{title}</Text>
+
+        {handleTrash &&
+          <TouchableOpacity style={style.right} onPress={handleTrash}>
+            <SvgDelete width={24} height={24} />
+          </TouchableOpacity>
+        }
+
       </View>
       <ScrollView style={[style.body]}>
         {children}
@@ -54,14 +64,19 @@ const style = StyleSheet.create({
     marginBottom: 5,
   },
 
+  title: {
+    fontSize: 20,
+    fontWeight: '700',
+  },
+
   back: {
     // borderWidth: 1, borderColor: 'red',
     padding: 10, marginLeft: -15, marginRight: 10,
   },
 
-  title: {
-    fontSize: 20,
-    fontWeight: '700',
+  right: {
+    // borderWidth: 1, borderColor: 'red',
+    marginLeft: 'auto',  //marginRight: 10,
   },
 
 

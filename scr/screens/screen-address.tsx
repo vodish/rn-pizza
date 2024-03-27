@@ -3,11 +3,12 @@ import { style } from './screen-action-filial-list.style'
 import ScreenInset from "../components/screen-inset";
 import { dataAddress } from "../utils/data";
 import SvgRadioButtonChecked from "../components/svg/svg_radio_button_checked";
-import { TAddress } from "../utils/types";
+import { Screen1, TAddress } from "../utils/types";
 
 
-export default function ScreenAddress({ navigation }) {
+export default function ScreenAddress({ navigation }: Screen1) {
 
+  
 
   function handleNavigate(el: TAddress) {
 
@@ -23,7 +24,7 @@ export default function ScreenAddress({ navigation }) {
   return (
     <ScreenInset title="Филиалы">
       <View style={style.list}>
-        
+
         {dataAddress.map((el, key) => {
           return (
             <View key={key} style={[style.row, { borderTopWidth: key ? 1 : 0 }]}>
