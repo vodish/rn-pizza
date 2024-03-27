@@ -6,13 +6,13 @@ import SvgRadioButtonChecked from "../components/svg/svg_radio_button_checked";
 import { TAddress } from "../utils/types";
 
 
-export default function ScreenAddressFilialList({ navigation }) {
+export default function ScreenAddress({ navigation }) {
 
 
   function handleNavigate(el: TAddress) {
 
     if (el.type == 'filial')
-      navigation.navigate({name: 'ScreenAddressFilialCard', params: {el}})
+      navigation.navigate({name: 'ScreenAddressFilial', params: {el}})
 
     else if (el.type == 'address')
       navigation.navigate({name: 'ScreenAddressPoint', params: {el}})

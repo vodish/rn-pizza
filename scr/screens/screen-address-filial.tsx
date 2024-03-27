@@ -4,7 +4,7 @@ import { Screen1, TAddress } from "../utils/types";
 import { useState } from "react";
 
 
-type ScreenAddressFilialCard = Screen1 & {
+type ScreenAddressFilial = Screen1 & {
   route: {
     params: {
       el: TAddress
@@ -12,7 +12,7 @@ type ScreenAddressFilialCard = Screen1 & {
   }
 }
 
-export default function ScreenAddressFilialCard({ navigation, route }: ScreenAddressFilialCard) {
+export default function ScreenAddressFilial({ navigation, route }: ScreenAddressFilial) {
 
   // console.log( JSON.stringify(route, null, 2) )
   const [modalVisible, setModalVisible] = useState(false);
@@ -45,9 +45,13 @@ export default function ScreenAddressFilialCard({ navigation, route }: ScreenAdd
           <Text>с 08:00 -- 05:00</Text>
         </View>
 
-        <Pressable style={[style.row, style.line]} onPress={() => setModalVisible(true)}>
+
+        <Text style={[style.row, style.head]}>Мои адреса</Text>
+
+
+        <TouchableOpacity style={[style.row, style.line]} onPress={() => setModalVisible(true)}>
           <Text>Добавить адрес доставки</Text>
-        </Pressable>
+        </TouchableOpacity>
 
 
 
@@ -62,10 +66,8 @@ export default function ScreenAddressFilialCard({ navigation, route }: ScreenAdd
 
           <View style={style.modal}>
             <View>
-              <Text style={{color: 'lime'}}>Hello World!</Text>
-              <Pressable
-                
-                onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={{ color: 'lime' }}>Hello World!</Text>
+              <Pressable onPress={() => setModalVisible(!modalVisible)}>
                 <Text >Hide Modal</Text>
               </Pressable>
             </View>
@@ -88,34 +90,36 @@ const style = StyleSheet.create({
     // borderWidth: 1, borderColor: 'red',
     marginHorizontal: 20,
   },
+
   row: {
     // borderBottomWidth: 1, borderBottomColor: '#eee',
     marginTop: 10, marginBottom: 10,
   },
-  
+
+  head: {
+    fontWeight: 'bold'
+  },
+
   line: {
     borderBottomWidth: 1, borderColor: '#eee', paddingBottom: 8,
   },
-  
+
   two: {
     display: 'flex', flexDirection: 'row', justifyContent: 'space-between',
   },
-  
+
   map: {
-    width: 'auto', height: 150, marginTop: 5,
-    borderColor: '#ccc', borderWidth:  1, backgroundColor: '#eee',
-    
+    width: 'auto', height: 110, marginTop: 5,
+    borderColor: '#ccc', borderWidth: 1, backgroundColor: '#eee',
+
   },
 
   modal: {
-    width: '100%', height: '40%',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    backgroundColor: 'rgba(0,0,0,0.9)',
-    color: 'lime',
     position: 'absolute', bottom: 0,
+    width: '100%', height: '40%',
+    borderTopLeftRadius: 20, borderTopRightRadius: 20,
+    alignItems: 'center', justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,0.9)',
+    color: 'lime',
   }
 
 })
