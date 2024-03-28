@@ -1,7 +1,7 @@
+import { BURGER_API_URL } from "./const";
 import { TFetchOptions } from "./types";
 
 
-const BURGER_API_URL = "https://norma.nomoreparties.space";
 
 
 
@@ -9,6 +9,8 @@ const BURGER_API_URL = "https://norma.nomoreparties.space";
 export async function fetchRequest<T>(endPoint: string, options: TFetchOptions = {}): Promise<never | T>
 {  
   let res   = await fetch(`${BURGER_API_URL}${endPoint}`, options)
+  // console.log( JSON.stringify(res, null, 4) )
+
   if ( !res ) {
     return Promise.reject(`Server error...`)
   }
@@ -28,7 +30,7 @@ export async function fetchRequest<T>(endPoint: string, options: TFetchOptions =
     return Promise.reject(json)
   }
 
-  
+  // console.log( JSON.stringify(json, null, 4) )
   return json;
 }
 

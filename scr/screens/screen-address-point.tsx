@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import ScreenInset from "../components/screen-inset";
-import { Screen1 } from "../utils/types";
+import { Screen1, TIngredient } from "../utils/types";
+import { fetchRequest } from "../utils/api";
+import { BURGER_API_URL } from "../utils/const";
 
 
 type TScreenAddressPoint = Screen1 & {
@@ -9,9 +12,27 @@ type TScreenAddressPoint = Screen1 & {
   }
 }
 
+
+
+
+// const f = fetch(`${BURGER_API_URL}/api/ingredients`)
+
+
 export default function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
 
-  // console.log( JSON.stringify(route, null, 4) )
+
+  useEffect( () => {
+    // fetchIngredients()
+  }, [])  
+  
+
+  async function fetchIngredients() {
+    const res = await fetchRequest<{data: TIngredient[]}>('/api/ingredients')
+    console.log( JSON.stringify(res.data[0], null, 4) )
+  }
+
+
+
 
   let title = 'Добавить адрес'
   let address = ''
