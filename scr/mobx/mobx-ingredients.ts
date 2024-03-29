@@ -5,32 +5,22 @@ import { MobxCounter } from './mobx-counter'
 
 
 class IngredientsStore {
+  list: TIngredient[] = []
 
   constructor() {
     makeAutoObservable(this)
   }
-
-  list: TIngredient[] = []
-
-
+  
   async fetch() {
 
     const res = await fetchRequest<{ data: TIngredient[] }>('/api/ingredients');
     
     runInAction(() => {
-      MobxCounter.increment()
+      MobxCounter.increment() // акшен другого стора
       this.list = res.data
     })
 
-    // let res   = await fetch(`https://norma.nomoreparties.space/api/ingredients`)
-    // const json  = await res.json()
-    // console.log(json)
-
   }
-
-
-
-
 }
 
 

@@ -19,6 +19,7 @@ type TScreenAddressPoint = Screen1 & {
 
 export default observer( ScreenAddressPoint );
 
+
 function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
 
 
@@ -63,9 +64,8 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
           <Button onPress={() => alert('Нажал кнопку')} title="Сохранить" />
         </View>
 
-        <Counter />
-
-        {/* <Text>{ JSON.stringify( MobxIngredients.list ) }</Text> */}
+        {/* <Counter /> */}
+        <Text>{ JSON.stringify( MobxIngredients.list, null, 2 ) }</Text>
       </View>
     </ScreenInset>
   )
