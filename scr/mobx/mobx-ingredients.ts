@@ -10,13 +10,13 @@ class IngredientsStore {
   constructor() {
     makeAutoObservable(this)
   }
-  
+
   async fetch() {
 
     const res = await fetchRequest<{ data: TIngredient[] }>('/api/ingredients');
     
     runInAction(() => {
-      MobxCounter.increment() // акшен другого стора
+      MobxCounter.increment() // акшен другого стора, для ошибки
       this.list = res.data
     })
 
