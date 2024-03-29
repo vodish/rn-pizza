@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import ScreenInset from "../components/screen-inset";
-import { Screen1, TIngredient } from "../utils/types";
-import { fetchRequest } from "../utils/api";
-import { BURGER_API_URL } from "../utils/const";
-
+import { Screen1 } from "../utils/types";
+import Counter from "../components/counter";
+import { MobxIngredients } from "../mobx/mobx-ingredients";
+import { observer } from 'mobx-react-lite'
 
 type TScreenAddressPoint = Screen1 & {
   route: {
@@ -15,25 +15,18 @@ type TScreenAddressPoint = Screen1 & {
 
 
 
-// const f = fetch(`${BURGER_API_URL}/api/ingredients`)
 
 
-export default function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
+export default observer( ScreenAddressPoint );
+
+function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
 
 
-  useEffect( () => {
-    // fetchIngredients()
-  }, [])  
+  useEffect(() => {
+    MobxIngredients.fetch()
+  }, [])
+
   
-
-  async function fetchIngredients() {
-    const res = await fetchRequest<{data: TIngredient[]}>('/api/ingredients')
-    console.log( JSON.stringify(res.data[0], null, 4) )
-  }
-
-
-
-
   let title = 'Добавить адрес'
   let address = ''
 
@@ -48,18 +41,13 @@ export default function ScreenAddressPoint({ navigation, route }: TScreenAddress
 
 
   function handleAddressPress(newValue: string) {
-
     console.log(newValue)
   }
 
 
-
-
   return (
-    <ScreenInset title={title} handleBack={navigation.goBack} handleTrash={address ? handlerTrash: null}>
+    <ScreenInset title={title} handleBack={navigation.goBack} handleTrash={address ? handlerTrash : null}>
       <View style={style.list}>
-
-
 
         <View style={[style.row]}>
           <Text style={style.label}>Адрес</Text>
@@ -75,11 +63,17 @@ export default function ScreenAddressPoint({ navigation, route }: TScreenAddress
           <Button onPress={() => alert('Нажал кнопку')} title="Сохранить" />
         </View>
 
+        <Counter />
 
+        {/* <Text>{ JSON.stringify( MobxIngredients.list ) }</Text> */}
       </View>
     </ScreenInset>
   )
 }
+
+
+
+
 
 
 

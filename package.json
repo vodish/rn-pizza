@@ -17,6 +17,8 @@
     "babel": "^6.23.0",
     "expo": "~50.0.13",
     "expo-status-bar": "~1.11.1",
+    "mobx": "^6.12.3",
+    "mobx-react-lite": "^4.0.7",
     "react": "18.2.0",
     "react-native": "0.73.5",
     "react-native-drawer-layout": "^3.3.0",

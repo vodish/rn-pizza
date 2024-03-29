@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ScreenAddress from "../screens/screen-address";
 import ScreenAddressFilial from "../screens/screen-address-filial";
-import ScreenAddressPoint from "../screens/screen-address-point";
+import screenAddressPoint from "../screens/screen-address-point";
 
 
 
@@ -13,7 +13,7 @@ export default function StackAddress() {
     <Navigator screenOptions={{headerShown: false}}>
       <Screen name="ScreenAddress" component={ScreenAddress} />
       <Screen name="ScreenAddressFilial" component={ScreenAddressFilial} />
-      <Screen name="ScreenAddressPoint" component={ScreenAddressPoint} />
+      <Screen name="ScreenAddressPoint" component={screenAddressPoint} />
     </Navigator>
   )
 }
