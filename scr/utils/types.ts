@@ -1,4 +1,4 @@
-export type Screen1 = {
+export type TScreenPlug = {
   navigation: {
     navigate(any): void,
     dispatch(): void,

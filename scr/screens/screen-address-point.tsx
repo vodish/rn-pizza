@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import ScreenInset from "../components/screen-inset";
-import { Screen1 } from "../utils/types";
+import { TScreenPlug } from "../utils/types";
 import Counter from "../components/counter";
 import { MobxIngredients } from "../mobx/mobx-ingredients";
 import { observer } from 'mobx-react-lite'
 
-type TScreenAddressPoint = Screen1 & {
+type TScreenAddressPoint = TScreenPlug & {
   route: {
     params?: 'new'
   }
@@ -14,11 +14,7 @@ type TScreenAddressPoint = Screen1 & {
 
 
 
-
-
-
 export default observer( ScreenAddressPoint );
-
 
 function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
 
@@ -116,6 +112,5 @@ const style = StyleSheet.create({
     borderBottomWidth: 1, borderColor: '#eee',
     paddingBottom: 8,
   },
-
-
+  
 })

@@ -1,12 +1,12 @@
 import { Alert, Modal, Pressable, Linking, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import ScreenInset from "../components/screen-inset";
-import { Screen1, TAddress } from "../utils/types";
+import { TScreenPlug, TAddress } from "../utils/types";
 import { useState } from "react";
 import { COLOR_LINK1 } from "../utils/const";
 import SvgMap from "../components/svg/svg_map";
 
 
-type ScreenAddressFilial = Screen1 & {
+type ScreenAddressFilial = TScreenPlug & {
   route: {
     params: {
       el: TAddress

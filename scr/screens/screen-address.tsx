@@ -3,10 +3,10 @@ import { style } from './screen-action-filial-list.style'
 import ScreenInset from "../components/screen-inset";
 import { dataAddress } from "../utils/data";
 import SvgRadioButtonChecked from "../components/svg/svg_radio_button_checked";
-import { Screen1, TAddress } from "../utils/types";
+import { TScreenPlug, TAddress } from "../utils/types";
 
 
-export default function ScreenAddress({ navigation }: Screen1) {
+export default function ScreenAddress({ navigation }: TScreenPlug) {
 
   
 
