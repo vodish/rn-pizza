@@ -5,6 +5,7 @@ import { TScreenPlug } from "../utils/types";
 import Counter from "../components/counter";
 import { MobxIngredients } from "../mobx/mobx-ingredients";
 import { observer } from 'mobx-react-lite'
+import { Link } from '@react-navigation/native';
 
 type TScreenAddressPoint = TScreenPlug & {
   route: {
@@ -20,7 +21,7 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
 
 
   useEffect(() => {
-    MobxIngredients.fetch()
+    // MobxIngredients.fetch()
   }, [])
 
 
@@ -55,22 +56,24 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
           <Text style={style.label}>Филиал</Text>
           <Text style={style.value}>Название филиала</Text>
         </View>
-        
+
         <View style={style.submit}>
           <Button onPress={() => navigation.navigate('StackProfile')} title="В профиль" />
         </View>
 
         <View style={style.submit}>
-          <Button onPress={() => navigation.navigate('StackAction', {screen: 'ScreenActionItem'})} title="В карточку акции" />
+          {/* <Button onPress={() => navigation.navigate('StackAction', {screen: 'ScreenActionItem'})} title="В карточку акции" /> */}
+          {/* <Button onPress={() => navigation.navigate('ScreenActionItem')} title="В карточку акции1" /> */}
+          <Link to={{ screen: 'ScreenActionItem' }} style={{ color: 'red' }}>Go to Jane's profile</Link>
         </View>
 
-        
+
         <View style={style.submit}>
           <Button onPress={() => alert('Нажал кнопку')} title="Сохранить" />
         </View>
 
         <Counter />
-        <Text>{JSON.stringify(MobxIngredients.list, null, 2)}</Text>
+        {/* <Text>{JSON.stringify(MobxIngredients.list, null, 2)}</Text> */}
       </View>
     </ScreenInset>
   )
