@@ -14,7 +14,7 @@ type TScreenAddressPoint = TScreenPlug & {
 
 
 
-export default observer( ScreenAddressPoint );
+export default observer(ScreenAddressPoint);
 
 function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
 
@@ -23,7 +23,7 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
     MobxIngredients.fetch()
   }, [])
 
-  
+
   let title = 'Добавить адрес'
   let address = ''
 
@@ -61,7 +61,7 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
         </View>
 
         <Counter />
-        <Text>{ JSON.stringify( MobxIngredients.list, null, 2 ) }</Text>
+        <Text>{JSON.stringify(MobxIngredients.list, null, 2)}</Text>
       </View>
     </ScreenInset>
   )
@@ -112,5 +112,5 @@ const style = StyleSheet.create({
     borderBottomWidth: 1, borderColor: '#eee',
     paddingBottom: 8,
   },
-  
+
 })

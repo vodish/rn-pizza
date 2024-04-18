@@ -55,7 +55,7 @@ export default function ScreenAddressFilial({ navigation, route }: ScreenAddress
         <Text style={[style.row, style.head]}>Мои адреса</Text>
 
 
-        <TouchableOpacity style={[style.row, style.line]} onPress={() => navigation.navigate({name: 'ScreenAddressPoint', params: 'new'})}>
+        <TouchableOpacity style={[style.row, style.line]} onPress={() => navigation.navigate({ name: 'ScreenAddressPoint', params: 'new' })}>
           <Text style={style.link}>Добавить адрес доставки</Text>
         </TouchableOpacity>
 

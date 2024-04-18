@@ -4,7 +4,7 @@ import { fetchRequest } from '../utils/api'
 import { MobxCounter } from './mobx-counter'
 
 
-class IngredientsStore {
+class StoreIngredients {
   list: TIngredient[] = []
 
   constructor() {
@@ -14,7 +14,7 @@ class IngredientsStore {
   async fetch() {
 
     const res = await fetchRequest<{ data: TIngredient[] }>('/api/ingredients');
-    
+
     runInAction(() => {
       MobxCounter.increment() // акшен другого стора, для ошибки
       this.list = res.data
@@ -24,4 +24,4 @@ class IngredientsStore {
 }
 
 
-export const MobxIngredients = new IngredientsStore()
+export const MobxIngredients = new StoreIngredients()
