@@ -12,7 +12,7 @@ export default function ScreenActionMain({ navigation }) {
 
       <Text>Action</Text>
 
-      <Button title="Item" onPress={() => navigation.navigate('ActionItemScreen')} />
+      <Button title="Item" onPress={() => navigation.navigate('ScreenActionItem')} />
 
       <TouchableOpacity onPress={()=>navigation.push('ActionModal')} style={{marginTop: 30}}>
         <Text>Action Modal</Text>

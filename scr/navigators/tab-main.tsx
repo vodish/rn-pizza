@@ -12,9 +12,9 @@ const { Navigator, Screen } = createBottomTabNavigator();
 
 function option(): BottomTabNavigationOptions {
   return ({
-    tabBarActiveTintColor: 'tomato',
-    tabBarInactiveTintColor: 'gray',
-    tabBarShowLabel: false,
+    // tabBarActiveTintColor: 'tomato',
+    // tabBarInactiveTintColor: 'gray',
+    // tabBarShowLabel: false,
     headerShown: false,
   })
 }

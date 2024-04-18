@@ -1,6 +1,6 @@
 export type TScreenPlug = {
   navigation: {
-    navigate(any): void,
+    navigate(any: any, option?: any): void,
     dispatch(): void,
     goBack(): void,
     reset(): void,

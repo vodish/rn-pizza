@@ -55,7 +55,16 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
           <Text style={style.label}>Филиал</Text>
           <Text style={style.value}>Название филиала</Text>
         </View>
+        
+        <View style={style.submit}>
+          <Button onPress={() => navigation.navigate('StackProfile')} title="В профиль" />
+        </View>
 
+        <View style={style.submit}>
+          <Button onPress={() => navigation.navigate('StackAction', {screen: 'ScreenActionItem'})} title="В карточку акции" />
+        </View>
+
+        
         <View style={style.submit}>
           <Button onPress={() => alert('Нажал кнопку')} title="Сохранить" />
         </View>
