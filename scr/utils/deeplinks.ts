@@ -4,6 +4,7 @@ import * as Linking from 'expo-linking';
 const deeplinks = {
   prefixes: [
     Linking.createURL('/'),
+    // 'rnpizza://app',
     'https://rnpizza.ru',
   ],
 
@@ -11,7 +12,7 @@ const deeplinks = {
 
   config: {
     screens: {
-      ScreenActionMain: 'actions',
+      StackAction: 'actions',
       ScreenActionItem: 'actions/:id',
     }
   },

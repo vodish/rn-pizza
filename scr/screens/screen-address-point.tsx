@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, Linking } from "react-native";
 import ScreenInset from "../components/screen-inset";
 import { TScreenPlug } from "../utils/types";
 import Counter from "../components/counter";
 import { MobxIngredients } from "../mobx/mobx-ingredients";
 import { observer } from 'mobx-react-lite'
 import { Link } from '@react-navigation/native';
+import { COLOR_LINK1 } from "../utils/const";
 
 type TScreenAddressPoint = TScreenPlug & {
   route: {
@@ -57,14 +58,16 @@ function ScreenAddressPoint({ navigation, route }: TScreenAddressPoint) {
           <Text style={style.value}>Название филиала</Text>
         </View>
 
+
         <View style={style.submit}>
-          <Button onPress={() => navigation.navigate('StackProfile')} title="В профиль" />
+          <Button onPress={() => Linking.openURL('rnpizza://app/actions')} title="Linking /actions" />
         </View>
 
         <View style={style.submit}>
           {/* <Button onPress={() => navigation.navigate('StackAction', {screen: 'ScreenActionItem'})} title="В карточку акции" /> */}
-          {/* <Button onPress={() => navigation.navigate('ScreenActionItem')} title="В карточку акции1" /> */}
-          <Link to={{ screen: 'ScreenActionItem' }} style={{ color: 'red' }}>Go to Jane's profile</Link>
+          <Link to={{ screen: 'StackAction' }} style={style.textLink}>StackAction</Link>
+          <Link to={{ screen: 'ScreenActionMain' }} style={style.textLink}>ScreenActionMain</Link>
+          <Link to={{ screen: 'ScreenActionItem' }} style={style.textLink}>ScreenActionItem</Link>
         </View>
 
 
@@ -94,6 +97,11 @@ const style = StyleSheet.create({
   row: {
     // backgroundColor: '#eee', borderRadius: 3,
     paddingVertical: 5, marginBottom: 10,
+  },
+
+  textLink: {
+    color: COLOR_LINK1, textAlign: 'center',
+    borderColor: COLOR_LINK1, borderWidth: 1, padding: 8, marginVertical: 5,
   },
 
   label: {
