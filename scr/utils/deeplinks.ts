@@ -1,13 +1,44 @@
 import * as Linking from 'expo-linking';
 
 
-const prefix = Linking.createURL('/');
+const deeplinks = {
+  prefixes: [
+    Linking.createURL('/'),
+    'https://rnpizza.ru',
+  ],
 
-const linking = {
-  prefixes: [prefix, 'https://rnpizza.ru'],
+  filter: (url) => !url.includes('+expo-auth-session'),
+
   config: {
-    // здесь прописываем соответствия путей 
+    screens: {
+      ScreenActionMain: 'actions',
+      ScreenActionItem: 'actions/:id',
+    }
   },
 }
 
-export default linking;
+export default deeplinks;
+
+
+/*
+--------------------------------------------------------------
+NavigationContainer
+    TabMain                                 (createBottomTabNavigator)
+        : StackAction                       (createNativeStackNavigator)
+            : ScreenActionMain
+            : ScreenActionItem
+            
+        : StackAddress                      (createNativeStackNavigator)
+            : ScreenAddress
+            : ScreenAddressFilial
+            : ScreenAddressPoint
+        : DrawCatalog                       (createDrawerNavigator)
+            : ScreenCatalogCategory
+        : StackBasket                       (createNativeStackNavigator)
+            : ScreenBasketOrder
+            : ScreenBasketDelivery
+            : ScreenBasketCheck
+        : StackProfile                      (createNativeStackNavigator)
+            : ScreenProfileMain
+--------------------------------------------------------------
+*/
